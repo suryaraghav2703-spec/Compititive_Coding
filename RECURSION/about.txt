@@ -89,7 +89,7 @@ Increasing
 
 FOR FACTORIAL 
 
-n! = n × (n-1)!   --> That's our recursive relationship.
+n! = n × (n-1)!   --> That's our recursive relationship
 
 Finding Base case:
 0!  = 1 and 1! = 1
@@ -99,6 +99,84 @@ therefore :-
 if n == 0 or n == 1:
     return 1
 
+
+     Pseudocode
+     factorial(n):
+
+    IF n == 0:
+        return 1
+
+    return n × factorial(n - 1)
+
+    dry run 
+going down:-
+5 × factorial(4)
+5 × 4 × factorial(3)
+5 × 4 × 3 × factorial(2)
+5 × 4 × 3 × 2 × factorial(1)
+5 × 4 × 3 × 2 × 1 × factorial(0)
+
+base case:- 
+factorial(0) = 1
+
+Now return:
+1
+↓
+1 × 1 = 1
+↓
+2 × 1 = 2
+↓
+3 × 2 = 6
+↓
+4 × 6 = 24
+↓
+5 × 24 = 120
+
+output = 120 
+
+
+POWER OF A NUMBER
+
+x^n = x × x^(n-1)  --> That's our recursive relationship
+
+Finding Base case:
+n^0 == 1    any number to the power zero is 1
+
+therefore:-
+if n == 0:
+    return 1
+
+      Pseudocode
+      power(x, n):
+
+    IF n == 0:
+        return 1
+
+    return x × power(x, n-1)
+
+Dry Run
+power(2,5)
+
+going down:
+2 × power(2,4)
+2 × 2 × power(2,3)
+2 × 2 × 2 × power(2,2)
+2 × 2 × 2 × 2 × power(2,1)
+2 × 2 × 2 × 2 × 2 × power(2,0)
+
+base case:
+power(2,0) = 1
+
+return:
+1
+2 × 1 = 2
+2 × 2 = 4
+2 × 4 = 8
+2 × 8 = 16
+2 × 16 = 32
+
+
+      
 
 
 
