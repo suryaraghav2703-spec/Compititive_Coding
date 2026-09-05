@@ -1,0 +1,104 @@
+My learning sequence will be:
+
+1. What is recursion?
+        ↓
+2. How recursion works
+        ↓
+3. Base case
+        ↓
+4. Recursive case
+        ↓
+5. Call stack
+        ↓
+6. Factorial
+        ↓
+7. Power
+        ↓
+8. Increasing / Decreasing
+        ↓
+9. Decreasing-Increasing
+        ↓
+10. Count digits
+        ↓
+11. Sum of array
+        ↓
+12. Reverse String
+        ↓
+13. LeetCode problems
+        ↓
+14. Advanced recursion problems
+
+
+1. What is a Recursion
+
+so basically recursion means a fucntion that calls itself. 
+
+def fun():
+    print("Hello")
+    fun()
+
+here : 
+fun()
+ ↓
+fun()
+ ↓
+fun()
+ ↓
+fun()
+ ↓
+...    
+
+It will continue forever. So recursion needs a way to stop.
+That stopping condition is called the:  Base Case
+
+2. The Two Parts of Recursion
+Almost every recursive problem has two important parts:
+
+                 RECURSION
+                    |
+          ┌─────────┴─────────┐
+          ↓                   ↓
+     BASE CASE          RECURSIVE CASE
+       Stop             Call itself
+
+Base Case
+
+Tells the function:
+
+"Stop here."
+
+Recursive Case
+
+Tells the function:
+
+"Solve a smaller version of the same problem."
+
+FOR PRINTING INCREASING AND DECREASING
+
+#######
+print before recursion
+        ↓
+Decreasing
+########
+
+########
+print after recursion
+        ↓
+Increasing
+########
+
+FOR FACTORIAL 
+
+n! = n × (n-1)!   --> That's our recursive relationship.
+
+Finding Base case:
+0!  = 1 and 1! = 1
+
+therefore :-
+
+if n == 0 or n == 1:
+    return 1
+
+
+
+
