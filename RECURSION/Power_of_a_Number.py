@@ -8,3 +8,11 @@ def power(x,n):
         return 1
     return x * power(x , n - 1)
 print("power of the nubmer:", power(2,5))
+
+# using loops
+num = 2
+power = 5
+result = 1
+for i in range(power):
+    result *= num
+print("power of the nubmer:", result)
