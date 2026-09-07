@@ -110,3 +110,26 @@ for i in range (1, len(nums)):
 print("MAX SUBARRAY: ",max_sum)        
 
 
+# Q.9] #  we need to check and return if target element is present in the sorted array if yes than return on 
+# which index otherwise return number greater than the target element
+ary = [2,3,5,7,9,14,17]
+target = 10
+# first lets solve using loops T.C = o(n)
+for i in range(len(ary)):
+    if (ary[i] >= target):
+        print(i)
+        break  
+
+# best approach binary search T.C = o(log n)
+low = 0
+high = len(ary) - 1
+ans = -1
+while low <= high:
+    mid = (low + high) // 2
+    if ary[mid] >= target:
+        ans = mid
+        high = mid - 1
+    else:
+        low = mid + 1
+print(ans)        
+
