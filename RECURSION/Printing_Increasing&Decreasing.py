@@ -69,7 +69,7 @@ print()
 print()
 print()
 
-#  if i have to print 1 to 5 without space seprating integers like answer should be 1 2 3 4 5..... and so on 
+#  if i have to print 1 to 5 as space-seprated integers like answer should be 1 2 3 4 5..... and so on 
 #  so to solve this we will do 
 def one_to_five(n):
     if n == 0:
