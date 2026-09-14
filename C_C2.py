@@ -133,3 +133,56 @@ while low <= high:
         low = mid + 1
 print(ans)        
 
+
+# find target in 2-D array
+matrix = [
+    [1,4,5,7],
+    [8,9,12,14],
+    [17,19,20,21],
+    [28,36,44,50]
+]
+target = 20
+got = 0
+found = False
+for i in matrix:
+    for j in i:
+        if j == target:
+            got += j
+            found = True
+            break
+if found == True:  
+    print("Target Found:", got) 
+else:
+    print("Not Found")                              
+    
+# transpose of a matrix
+matrix = [
+    [1,4,5,7],
+    [8,9,12,14],
+    [17,19,20,21],
+    [28,36,44,50]
+]
+for i in range(len(matrix)):
+    for j in range(i + 1, len(matrix)):
+        matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
+print(matrix)
+
+print()
+print()
+# sorted 2-D array
+matrix = [
+    [2,7,1,3],
+    [8,4,12,6],
+    [14,5,26,19]
+]
+arr = []
+for i in matrix:
+    for j in i:
+        arr.append(j)
+arr.sort()
+k = 0
+for i in range(len(matrix)):
+    for j in range(len(matrix[0])):
+        matrix[i][j] == arr[j]
+        k += 1
+print(matrix)                    
