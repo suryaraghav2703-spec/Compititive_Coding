@@ -13,9 +13,9 @@ print("Maximun Element: ", max_element)
 # Q.2] find min element in an array
 arr = 2,7,8,14,13,9
 min_element = arr[0]
-for i in arr:
-    if i < min_element:
-        min_element = i
+for i in range (len(arr)):
+    if arr[i] < min_element:
+        min_element = arr[i]
 print("Minimun Element: ", min_element) 
 
 # Q.3] sum of arrays
@@ -169,6 +169,7 @@ print(matrix)
 
 print()
 print()
+
 # sorted 2-D array
 matrix = [
     [2,7,1,3],
@@ -185,4 +186,92 @@ for i in range(len(matrix)):
     for j in range(len(matrix[0])):
         matrix[i][j] == arr[j]
         k += 1
-print(matrix)                    
+print(matrix)    
+
+print()
+print()
+# Rotate matrix by 90 degree
+matrix = [
+    [1,2,3,4],
+    [12,15,20,30],
+    [26,34,24,21],
+    [36,41,32,48]
+]
+
+for i in range(len(matrix)):
+    for j in range(i +1, len(matrix)):
+        matrix[i][j], matrix[j][i] = matrix[j][i],matrix[i][j]
+
+for i in range(len(matrix)):
+    left = 0
+    right = len(matrix) - 1
+    while left < right:
+        matrix[i][left],matrix[i][right] = matrix[i][right], matrix[i][left]
+        left += 1
+        right -= 1
+print("90 degree rotated:",matrix)
+
+# leetcode - 881(boats to save people)
+people = [3,3,4,5]
+limit = 5
+
+
+
+
+# leetcode - 1394 (lucky integer in an array)
+
+
+# PATTERN PRINTING 
+# *        *
+# **      **
+# ***    ***
+# **********
+
+n = 4
+for i in range(1,n+1):
+    print("*" * i + " " *(2*(n-i))  + "*"* i , end = " ")
+    print()
+
+print()
+print()
+
+# *
+# **
+# ***
+# ****
+# *****
+n = 5
+for i in range(1,n+1):
+    print("*"*i, end = " ")
+    print()
+
+print()
+print()    
+
+# *****
+# ****
+# ***
+# **
+# *
+n = 5
+for i in range(1,n+1):
+    print("*" * (n + 1 - i), end = " ")
+    print()
+
+print()
+print()
+
+# *****
+# *****
+# *****
+# *****
+# *****
+n = 5
+for i in range(1, n + 1):
+    print("*" * n, end = " ")
+    print()
+
+print()
+print()
+
+

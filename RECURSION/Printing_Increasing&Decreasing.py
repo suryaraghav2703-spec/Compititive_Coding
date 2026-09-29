@@ -77,5 +77,3 @@ def one_to_five(n):
     one_to_five(n - 1)
     print(n , end = " ")
 one_to_five(5)        # here out put will show 1 2 3 4 5   
-
-
