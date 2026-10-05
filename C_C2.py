@@ -274,3 +274,27 @@ for i in range(1, n + 1):
 print()
 print()
 
+# Given an integer array arr[], which denotes the positions of stalls. All the positions are distinct. 
+# There are k aggressive cows.
+# Assign the cows to the stalls such that the minimum distance between any two cows is maximized.
+
+stalls = [1, 2, 4, 8, 9]
+k = 3
+stalls.sort()
+low = 1
+high = stalls[-1] - stalls[0]
+answer = 0
+while low <= high:
+    mid = (low + high) // 2
+    cows = 1
+    last_position = stalls[0]
+    for i in range(1, len(stalls)):
+        if stalls[i] - last_position >= mid:
+            cows += 1
+            last_position = stalls[i]
+    if cows >= k:
+        answer = mid
+        low = mid + 1
+    else:
+        high = mid - 1
+print("Maximum minimum distance:", answer)
