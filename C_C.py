@@ -51,7 +51,7 @@ for i in range(len(ar)):
 
 
 # count element with max frequency
-k = [1,2,2,3,4,3,2]    # solved using loops T.C = o(N^2) and S.C o(1)
+k = [1,2,2,3,4,3,2,2]    # solved using loops T.C = o(N^2) and S.C o(1)
 ans = 0
 for i in k:
     count = 0
@@ -60,7 +60,7 @@ for i in k:
             count += 1
         if count > ans:
             ans = count
-print(ans)        
+print("max count", ans)        
 
 # now we will sort the array first
 freq = [1,2,2,3,4,3,2]
@@ -78,7 +78,17 @@ print(Ans)
 
 
 # Rotate an Array
-nums = [1,2,3,4,5,6,7,8]
+# nums = [1,2,3,4,5,6,7,8]
 # k = 3 means we have to shift last 3 digits in front
-
-
+def rotate_array(nums, k):
+    n = len(nums)
+    if n == 0 :
+        return nums
+    k = k % n
+    if k != 0:
+        return nums[-k:] + nums[:-k]
+    else:
+        nums
+nums = [1,2,3,4,5,6,7,8]
+k = 3
+print(rotate_array(nums, k))        

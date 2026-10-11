@@ -298,3 +298,129 @@ while low <= high:
     else:
         high = mid - 1
 print("Maximum minimum distance:", answer)
+
+# Rotate an array
+def rotate_array(arr, k):
+    n = len(arr)
+    if n == 0 :
+        return arr
+    k = k % n
+    if k != 0:
+        return arr[-k:] + arr[:-k]
+    else:
+        arr
+arr = [1,2,3,4,5,6,7]
+k = 4
+print(rotate_array(arr,k))        
+
+# move all zeros at the end 
+def move_zero(arr):
+    pos = 0
+    for i in range(len(arr)):
+        if arr[i] != 0:
+            arr[pos] = arr[i]
+            pos += 1
+    while pos < len(arr):
+        arr[pos] = 0
+        pos += 1
+    return arr 
+print(move_zero([0, 1, 2, 0, 3, 12]))   
+
+# remove even or odd 
+arr = [1,2,3,4,5,6,7,8,9]
+even = []
+for i in arr:
+    if i % 2 == 0:
+    # for odd --> if i % 2 != 0 
+        even.append(i)
+print(even)    
+
+# count the number of zeros
+arr = [0,1,0,4,0,8,9]
+count = 0
+for i in arr:
+    if i == 0:
+        count += 1
+print(count)        
+
+# Two sum
+def two_sum(nums, target):
+    n = len(nums)
+    for i in range(n):
+        for j in range(i + 1, n):
+            if nums[i] + nums[j] == target:
+                return [i, j]
+print(two_sum([2,7,11,15], 9))
+
+# Find the element with maximum frequency
+freq = [1,2,2,3,2,4,5]
+ans = 0
+for i in freq:
+    count = 0
+    for j in range(i, len(freq)):
+        if freq[i] == freq[j]:
+            count += 1
+        if count > ans:
+            ans = count    
+print(ans)   
+
+# Problem: Find the index of a target in a sorted array. Return -1 if it is absent.
+def find_index(arr, target):
+    low = 0
+    high = len(arr) - 1
+    while low <= high:
+        mid = (low + high) // 2
+
+        if arr[mid] == target:
+            return mid 
+        elif arr[mid] < target:
+            low = mid + 1
+        else:
+            high = mid - 1
+    return - 1
+print("found target at index:", find_index([1,2,5,7,9], 7)) 
+
+# Problem: Return the index where the target is found. If it is absent, return the index where 
+# it should be inserted to keep the array sorted.
+def insert_index(nums, target):
+    low = 0
+    high = len(nums) - 1
+    while low <= high:
+        mid = (low + high) // 2
+        if nums[mid] == target:
+            return mid 
+        elif nums[mid] < target:
+            low = mid + 1
+        else:
+            high = mid - 1
+    return low 
+print(insert_index([0,1,3,4], 2))
+print(insert_index([1,2,5,6], 7))
+print(insert_index([1,2,3,4,5], 3))   
+
+# Problem: A sorted array has been rotated. Find the target in (O(log n)) time.
+def rotated_search(arr, target):
+    low = 0
+    high = len(arr) - 1
+    while low <= high:
+        mid = (low + high) // 2
+        if arr[mid] == target:
+            return mid
+        
+        if arr[low] <= arr[mid]:
+            if arr[low] <= target < arr[mid]:
+                high = mid - 1
+            else:
+                low = mid + 1
+
+        else:
+            if arr[mid] < target <= arr[high]:
+                low = mid + 1
+            else:
+                high = mid - 1
+    return -1            
+print(rotated_search([4,5,6,7,0,1,2], 1))  
+
+# Problem: Koko has piles of bananas. She eats at speed k bananas per hour. 
+# Each pile takes [pile / k] hours, and she can eat from only one pile per hour. 
+# Find the minimum speed needed to finish within h hours.
