@@ -424,3 +424,17 @@ print(rotated_search([4,5,6,7,0,1,2], 1))
 # Problem: Koko has piles of bananas. She eats at speed k bananas per hour. 
 # Each pile takes [pile / k] hours, and she can eat from only one pile per hour. 
 # Find the minimum speed needed to finish within h hours.
+def mini_eating_speed(piles, h):
+    low = 1
+    high = max(piles)
+    while low < high:
+        mid = (low + high) // 2
+        hours = 0
+        for pile in piles:
+            hours += (pile + mid - 1) // mid
+        if hours <= h:
+            high = mid
+        else:
+            low = mid + 1
+    return low 
+print("speed:" ,mini_eating_speed([3,6,7,11], 8))                

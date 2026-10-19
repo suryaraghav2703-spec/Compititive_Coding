@@ -31,26 +31,26 @@
 # Therefore:
 # right_sum = total_sum - left_sum - arr[i]
 
-# PSEUDOCODE: 
-# Find total sum of the array 
-# set left_sum = 0
-# for every index i:
-#     right_sum = total_sum - arr[i] - left_sum 
-#     if left_sum == right_sum:
-#        return i
-#     add arr[i] to left_sum
-# return -1
+'''PSEUDOCODE: 
+Find total sum of the array 
+set left_sum = 0
+for every index i:
+    right_sum = total_sum - arr[i] - left_sum 
+    if left_sum == right_sum:
+       return i
+    add arr[i] to left_sum
+return -1 '''
 
-# DRY RUN: 
-# arr = [ 1, 7, 3, 6, 5, 6]
-# total_sum = 1 + 7 + 3 + 6 + 5 + 6 = 28
-# Inititally left_sum = 0
-# Index     Element     Left sum    Right sum     Pivot?
-#  0           1            0          27           NO
-#  1           7            1          20           NO
-#  2           3            8          17           NO
-#  3           6           11          11           YES
-#  HENCE:--- at index 3 , element 6 is the pivot point where left and right sum are equal which is 11.
+'''DRY RUN: 
+arr = [ 1, 7, 3, 6, 5, 6]
+total_sum = 1 + 7 + 3 + 6 + 5 + 6 = 28
+Inititally left_sum = 0
+Index     Element     Left sum    Right sum     Pivot?
+ 0           1            0          27           NO
+ 1           7            1          20           NO
+ 2           3            8          17           NO
+ 3           6           11          11           YES
+ HENCE:--- at index 3 , element 6 is the pivot point where left and right sum are equal which is 11.'''
 
 def pivotIndex(arr):
     total_sum = 0
